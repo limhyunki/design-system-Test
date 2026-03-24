@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKT UX Design System</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAV
+       ══════════════════════════════════════ -->
+  <nav id="mainNav">
+    <div class="nav-left">
+      <span class="nav-brand">SKT UX Design System</span>
+
+      <!-- Version Dropdown -->
+      <div class="nav-version-wrap">
+        <div class="nav-version-btn" id="versionBtn">
+          <span id="versionLabel">v1.0</span>
+          <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 4L5 7L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <ul class="nav-version-menu" id="versionMenu">
+          <li class="selected" data-value="v1.0">v1.0</li>
+          <li data-value="v0.9">v0.9</li>
+          <li data-value="v0.8">v0.8</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" class="active" data-section="seamless">Emotion Flow</a></li>
+      <li><a href="#" data-section="foundations">Foundations</a></li>
+      <li><a href="#" data-section="components">Components</a></li>
+      <li><a href="#" data-section="patterns">Patterns</a></li>
+      <li><a href="#" data-section="ai">AI Agent</a></li>
+      <li><a href="#" data-section="writing">UX Writing</a></li>
+      <li><a href="#" data-section="resources">Resources</a></li>
+    </ul>
+
+    <!-- Search trigger -->
+    <div class="nav-search" id="navSearchBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+      Search
+    </div>
+  </nav>
+
+  <!-- Search overlay (dimmed background) -->
+  <div class="search-overlay" id="searchOverlay"></div>
+
+  <!-- Search bar (slides down from top) -->
+  <div class="search-bar-wrap" id="searchBarWrap">
+    <div class="search-icon-left">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+    </div>
+    <input class="search-input" id="searchInput" type="text" placeholder="검색어를 입력하세요" autocomplete="off" />
+    <button class="search-close-btn" id="searchCloseBtn" aria-label="닫기">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       HERO
+       ══════════════════════════════════════ -->
+  <section class="hero">
+    <svg class="hero-waves" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#3617CE" stop-opacity="0.22"/>
+          <stop offset="50%"  stop-color="#3617CE" stop-opacity="0.10"/>
+          <stop offset="100%" stop-color="#3617CE" stop-opacity="0.04"/>
+        </linearGradient>
+        <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#7B6EE8" stop-opacity="0.20"/>
+          <stop offset="60%"  stop-color="#7B6EE8" stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#7B6EE8" stop-opacity="0.03"/>
+        </linearGradient>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#F4F3FD"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="400" fill="url(#bgGrad)"/>
+      <path d="M-100,280 C100,180 300,320 500,240 C700,160 900,300 1100,220 C1300,140 1400,220 1540,200 L1540,400 L-100,400 Z" fill="url(#waveGrad2)"/>
+      <path d="M-100,310 C150,230 350,350 600,270 C800,200 1000,330 1200,250 C1350,185 1440,250 1540,230 L1540,400 L-100,400 Z" fill="rgba(54,23,206,0.06)"/>
+      <path d="M-100,240 C50,150 200,280 400,200 C600,120 750,260 950,180 C1150,100 1300,180 1540,160 L1540,400 L-100,400 Z" fill="url(#waveGrad1)"/>
+      <path d="M-100,290 C80,200 250,320 480,240 C680,170 850,280 1050,210 C1230,145 1380,210 1540,195 L1540,400 L-100,400 Z" fill="rgba(54,23,206,0.08)"/>
+    </svg>
+    <div class="hero-content">
+      <h1 class="hero-title">Emotion Flow</h1>
+      <p class="hero-sub">SKT UX Design System</p>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       CARD GRID
+       ══════════════════════════════════════ -->
+  <section class="cards-section">
+    <div class="cards-grid">
+
+      <!-- Foundations -->
+      <a class="card" href="#" data-section="foundations">
+        <div class="card-thumb">
+          <div class="thumb-found-inner">
+            <div class="korean-text">가나다</div>
+            <div class="color-swatches">
+              <div class="swatch" style="background:#e8e8e8"></div>
+              <div class="swatch" style="background:#c0c0c0"></div>
+              <div class="swatch" style="background:#888"></div>
+              <div class="swatch" style="background:#444"></div>
+              <div class="swatch" style="background:#00B0CA"></div>
+              <div class="swatch" style="background:#E5001A"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">Foundations</div>
+          <div class="card-desc">컬러, 타이포그래피, 레이아웃 등 디자인의 기본 구조와 규칙을 정의</div>
+        </div>
+      </a>
+
+      <!-- Components -->
+      <a class="card" href="#" data-section="components">
+        <div class="card-thumb">
+          <div class="thumb-comp-inner">
+            <div class="fake-select">
+              <span class="fake-select-label">Label</span>
+              <span class="fake-select-arrow">▾</span>
+            </div>
+            <div class="fake-controls">
+              <div class="fake-toggle"></div>
+              <div class="fake-btn">Button</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">Components</div>
+          <div class="card-desc">사용자 인터페이스를 구성하는 재사용 가능한 요소</div>
+        </div>
+      </a>
+
+      <!-- Patterns -->
+      <a class="card" href="#" data-section="patterns">
+        <div class="card-thumb">
+          <div class="thumb-patt-inner">
+            <div class="fake-search">
+              <span class="fake-search-bar"></span>
+              <span class="fake-search-icon">🔍</span>
+            </div>
+            <div class="fake-lines">
+              <div class="fake-line" style="width:100%"></div>
+              <div class="fake-line-row">
+                <div class="fake-line" style="width:60%"></div>
+                <span class="fake-chevron">›</span>
+              </div>
+              <div class="fake-line" style="width:85%"></div>
+              <div class="fake-line-row">
+                <div class="fake-line" style="width:70%"></div>
+                <span class="fake-chevron">›</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">Patterns</div>
+          <div class="card-desc">반복되는 업무 단위의 문제를 해결하는 가이드라인</div>
+        </div>
+      </a>
+
+      <!-- Visual Communication -->
+      <a class="card" href="#" data-section="visual">
+        <div class="card-thumb">
+          <div class="thumb-visual-inner">
+            <div class="visual-card">
+              <div class="visual-img-placeholder">🖼</div>
+            </div>
+            <div class="visual-card-stack">
+              <div class="visual-card-sm"><div class="cloud-shape"></div></div>
+              <div class="visual-card-sm"><div class="wave-shape"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">Visual Communication</div>
+          <div class="card-desc">SKT의 모든 경험을 하나로 잇는 시각 언어 가이드라인</div>
+        </div>
+      </a>
+
+      <!-- AI Agent -->
+      <a class="card" href="#" data-section="ai">
+        <div class="card-thumb">
+          <div class="thumb-ai-inner">
+            <div class="fake-chat-input">
+              <span class="chat-placeholder">+ 원하는 업무를 입력하세요</span>
+              <div class="chat-icons">
+                <div class="chat-icon chat-icon-mic">🎤</div>
+                <div class="chat-icon chat-icon-send">→</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">AI Agent</div>
+          <div class="card-desc">AI 도구와 사용자의 상호작용을 위한 원칙과 가이드라인</div>
+        </div>
+      </a>
+
+      <!-- UX Writing -->
+      <a class="card" href="#" data-section="writing">
+        <div class="card-thumb thumb-writing">
+          <div class="writing-text">
+            고객을 위한,<br>
+            고객의 언어로<span class="cursor-bar"></span><br>
+            <span class="sub-text">쉽고 편리한</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">UX Writing</div>
+          <div class="card-desc">명확하고 일관된 메시지를 전달하기 위한 언어 원칙과 표현</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════ -->
+  <footer class="site-footer">
+    <span class="footer-copy">Copyright© SKT Corp. All rights reserved.</span>
+    <div class="footer-feedback">
+      <span class="footer-feedback-label">Help us improve</span>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btnLike" title="좋아요">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
+            <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+          </svg>
+        </button>
+        <button class="feedback-btn" id="btnDislike" title="별로에요">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10z"/>
+            <path d="M17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
